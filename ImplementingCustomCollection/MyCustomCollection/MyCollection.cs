@@ -12,13 +12,11 @@
         private T[] elements;
 
         private readonly IWriter writer;
-        private readonly IReader reader;
 
         public MyCollection()
         {
             elements = new T[InitialCapacity];
 
-            this.reader = new ConsoleReader();
             this.writer = new ConsoleWriter();
         }
 
@@ -95,6 +93,11 @@
                 if (value == null)
                 {
                     throw new ArgumentException("Value cannot be null!");
+                }
+
+                if (!this.IsIndexValid(index))
+                {
+                    throw new ArgumentOutOfRangeException("Invalid index!");
                 }
 
                 this.elements[index] = value;
