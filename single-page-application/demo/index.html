@@ -5,11 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPA Demo</title>
+    <title>SPA</title>
     <script src="/src/app.js" type="module"></script>
     <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        h1 {
+            background-color: aquamarine;
+        }
+
+        /* unvisited link */
+        a:link {
+            color: red;
+        }
+
+        /* visited link */
+        a:visited {
+            color: green;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: hotpink;
+        }
+
+        /* selected link */
+        a:active {
+            color: blue;
+        }
+
         section {
-            display: none;
             padding: 16px 32px;
         }
 
@@ -41,7 +79,7 @@
 </head>
 
 <body>
-    <h1>SPA Demo</h1>
+    <h1>Single Page Application</h1>
     <nav>
         <a id="catalog-link" href="javascript:void(0)">Catalog</a>
         <a class="guest" id="login-link" href="javascript:void(0)">Login</a>
@@ -49,6 +87,8 @@
         <span class="user" id="welcome-msg"></span>
         <a class="user" id="logout-link" href="javascript:void(0)">Logout</a>
     </nav>
+
+    <main></main>
 
     <section id="catalog-view">
         <h2>All Recipes</h2>
@@ -86,10 +126,11 @@
             <label>Email: <input type="text" name="email"></label>
             <label>Username: <input type="text" name="username"></label>
             <label>Password: <input type="password" name="password"></label>
-            <label>Repeat: <input type="password" name="password"></label>
+            <label>Repeat: <input type="password" name="repass"></label>
             <button>Register</button>
         </form>
     </section>
+    <img id="gunter" src="./imgs/penguin-2.webp" alt="penguin">
 </body>
 
 </html>

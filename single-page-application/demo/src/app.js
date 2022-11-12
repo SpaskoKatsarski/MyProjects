@@ -24,6 +24,7 @@ function onNavigate(event) {
         const view = views[id];
 
         if (typeof(view) === 'function') {
+            document.querySelector('main').replaceChildren();
             view();
         }
     }

@@ -1,13 +1,12 @@
 import { showDetailsView } from './details.js';
 
 document.getElementById('recipe-list').addEventListener('click', openRecipe);
+const section = document.getElementById('catalog-view');
+section.remove();
 
 export async function showCatalogView() {
-    [...document.querySelectorAll('section')].forEach(s => s.style.display = 'none');
-
     const recipes = await getAllRecipes();
-
-    document.getElementById('catalog-view').style.display = 'block';
+    document.querySelector('main').appendChild(section);
 
     displayRecipes(recipes);
 }

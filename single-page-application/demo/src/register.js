@@ -1,26 +1,28 @@
-import { checkUserNav } from './auth.js';
-import { showCatalogView } from './catalog.js';
+import { checkUserNav } from "./auth.js";
 
-document.getElementById('login-form').addEventListener('submit', onLogin);
-const section = document.getElementById('login-view');
+document.getElementById('register-form').addEventListener('submit', onRegister);
+
+const section = document.getElementById('register-view');
 section.remove();
 
-export function showLoginView() {
+export function showRegisterView() {
     document.querySelector('main').appendChild(section);
 }
 
-async function onLogin(event) {
+async function onRegister(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    const { email, password } = Object.fromEntries(formData);
+    const { email, username, password, repass } = Object.fromEntries(formData);
 
     try {
-        await login(email, password);
-        checkUserNav();
-        showCatalogView();
+        if (password !== repass) {
+            throw new Error('Passowrds do not match!');
+        }
 
-        section.remove();
+        await register(email, username, password);
+        checkUserNav
+        showCatalogView();
     } catch (err) {
         alert(err.message);
     }
@@ -28,13 +30,13 @@ async function onLogin(event) {
     event.target.reset();
 }
 
-async function login(email, password) {
-    const response = await fetch('http://localhost:3030/users/login', {
+async function register(email, username, password) {
+    const response = await fetch('http://localhost:3030/users/register', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, username, password })
     });
 
     if (response.ok != true) {

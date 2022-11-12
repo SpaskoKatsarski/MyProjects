@@ -1,9 +1,10 @@
+const section = document.getElementById('details-view');
+section.remove();
+
 export async function showDetailsView(id) {
-    [...document.querySelectorAll('section')].forEach(s => s.style.display = 'none');
+    document.querySelector('main').appendChild(section);
 
     const recipe = await getById(id);
-
-    document.getElementById('details-view').style.display = 'block';
 
     displayRecipe(recipe);
 }
