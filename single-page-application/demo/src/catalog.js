@@ -15,9 +15,9 @@ export async function showCatalogView() {
 
 async function getAllRecipes() {
     const response = await fetch('http://localhost:3030/data/recipes?select=' + encodeURIComponent('_id,name'));
-    const data = await response.json();
+    const recipes = await response.json();
 
-    return data;
+    return recipes;
 }
 
 function displayRecipes(recipes) {

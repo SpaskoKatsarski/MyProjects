@@ -1,4 +1,4 @@
-import { showCatalogView } from "./catalog";
+import { showCatalogView } from './catalog.js';
 
 export function checkUserNav() {
     const username = sessionStorage.getItem('username');
@@ -15,19 +15,22 @@ export function checkUserNav() {
 
 document.getElementById('logout-link').addEventListener('click', onLogout);
 
-function onLogout(event) {
+function onLogout() {
     event.preventDefault();
 
     const token = sessionStorage.getItem('accessToken');
+
     fetch('http://localhost:3030/users/logout', {
         method: 'get',
         headers: {
             'X-Authorization': token
         }
     });
+
     sessionStorage.removeItem('userId');
     sessionStorage.removeItem('username');
-    sessionStorage.removeItem('accessToken');
+    sessionStorage.removeItem('acessToken');
+
     checkUserNav();
     showCatalogView();
 }
