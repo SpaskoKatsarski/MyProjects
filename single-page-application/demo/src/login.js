@@ -1,7 +1,6 @@
 import { checkUserNav } from './auth.js';
 import { showCatalogView } from './catalog.js';
 
-document.getElementById('login-link').addEventListener('click', showLoginView);
 document.getElementById('login-form').addEventListener('submit', onLogin);
 
 
