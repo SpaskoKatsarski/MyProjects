@@ -1,4 +1,5 @@
 import { checkUserNav } from "./auth.js";
+import { showCatalogView } from "./catalog.js";
 
 document.getElementById('register-form').addEventListener('submit', onRegister);
 
@@ -21,8 +22,10 @@ async function onRegister(event) {
         }
 
         await register(email, username, password);
-        checkUserNav
+        checkUserNav();
         showCatalogView();
+
+        section.remove();
     } catch (err) {
         alert(err.message);
     }
