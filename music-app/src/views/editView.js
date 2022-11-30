@@ -4,7 +4,7 @@ import { createSubmitHandler } from "../util.js";
 
 export async function showEdit(ctx) {
     const album = await getAlbumById(ctx.params.id);
-
+debugger;
     ctx.render(editTemp(album, createSubmitHandler(onEdit)));
 
     async function onEdit(data) {
@@ -31,7 +31,7 @@ const editTemp = (album, handler) => html`
                 <input id="name" name="name" class="name" type="text" .value=${album.name}>
 
                 <label for="imgUrl" class="vhide">Image Url</label>
-                <input id="imgUrl" name="imgUrl" class="imgUrl" type="text" .value=".${album.imgUrl}">
+                <input id="imgUrl" name="imgUrl" class="imgUrl" type="text" .value=${album.imgUrl}>
 
                 <label for="price" class="vhide">Price</label>
                 <input id="price" name="price" class="price" type="text" .value=${album.price}>

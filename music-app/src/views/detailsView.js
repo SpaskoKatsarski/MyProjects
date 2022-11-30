@@ -21,7 +21,7 @@ export const detailsTemp = (album, isOwner, handler) => html`
 <section id="detailsPage">
     <div class="wrapper">
         <div class="albumCover">
-            <img src="..${album.imgUrl}">
+            <img src=${album.imgUrl}>
         </div>
         <div class="albumInfo">
             <div class="albumText">

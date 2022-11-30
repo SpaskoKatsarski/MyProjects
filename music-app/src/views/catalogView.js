@@ -21,7 +21,7 @@ const catalogTemp = (albums, hasUser) => html`
 function createAlbumTemp(album, hasUser) {
     return html`
     <div class="card-box">
-        <img src=".${album.imgUrl}">
+        <img src=${album.imgUrl}>
         <div>
             <div class="text-center">
                 <p class="name">Name: ${album.name}</p>
