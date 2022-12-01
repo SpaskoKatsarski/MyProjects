@@ -35,7 +35,7 @@ const shoeTemp = (shoe, hasUser) => html`
     </p>
     <p><strong>Value:</strong><span class="value">${shoe.value}</span>$</p>
     ${hasUser ? html`
-    <a class="details-btn" href="">Details</a>
+    <a class="details-btn" href="/details/${shoe._id}">Details</a>
     ` : nothing}
 </li>
 `

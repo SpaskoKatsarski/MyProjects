@@ -14,3 +14,18 @@ export async function addShoe(data) {
     const result = await post(endpoints.shoes, data);
     return result;
 }
+
+export async function getShoeById(id) {
+    const shoe = await get(endpoints.shoes + '/' + id);
+    return shoe;
+}
+
+export async function updateShoe(id, data) {
+    const result = await put(endpoints.shoes + '/' + id, data);
+    return result;
+}
+
+export async function deleteShoe(id) {
+    const result = await del(endpoints.shoes + '/' + id);
+    return result;
+}
