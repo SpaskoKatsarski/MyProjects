@@ -24,7 +24,9 @@ const shoeTemp = (shoe, hasUser) => html`
     <p><strong>Value:</strong><span class="value">${shoe.value}</span>$</p>
     ${hasUser ? html`
     <a class="details-btn" href="/details/${shoe._id}">Details</a>
-    ` : nothing}`;
+    ` : nothing}
+</li>`
+    ;
 
 const searchTemp = (handler, shoes = false, hasUser) => html`
 <section id="search">
