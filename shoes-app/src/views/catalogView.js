@@ -3,8 +3,7 @@ import { html, nothing } from "../lib.js";
 
 export async function showCatalog(ctx) {
     const shoes = await getAllShoes();
-    debugger;
-    ctx.render(catalogTemp(shoes, !!ctx.user))
+    ctx.render(catalogTemp(shoes, !!ctx.user));
 }
 
 const catalogTemp = (shoes, hasUser) => html`
@@ -38,4 +37,4 @@ const shoeTemp = (shoe, hasUser) => html`
     <a class="details-btn" href="/details/${shoe._id}">Details</a>
     ` : nothing}
 </li>
-`
+`;

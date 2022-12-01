@@ -29,3 +29,8 @@ export async function deleteShoe(id) {
     const result = await del(endpoints.shoes + '/' + id);
     return result;
 }
+
+export async function getShoeByQuery(query) {
+    const result = await get(endpoints.shoes + `?where=brand%20LIKE%20%22${query}%22`);
+    return result;
+}

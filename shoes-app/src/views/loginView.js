@@ -6,7 +6,6 @@ export function showLogin(ctx) {
     ctx.render(loginTemp(createSubmitHandler(onLogin)));
 
     async function onLogin(data) {
-        debugger;
         const { email, password } = data;
 
         if (!email || !password) {
