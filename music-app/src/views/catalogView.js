@@ -1,9 +1,27 @@
 import { getAllAlbums } from "../api/data.js";
-import { html, nothing } from "../lib.js";
+import { html, nothing, until } from "../lib.js";
 
 export async function showCatalog(ctx) {
-    const albums = await getAllAlbums();
-    ctx.render(catalogTemp(albums, !!ctx.user));
+    ctx.render(until(loadAlbums(), html`
+    <div class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>`));
+
+    async function loadAlbums() {
+        const albums = await getAllAlbums();
+        const hasUser = !!ctx.user;
+
+        return html`${catalogTemp(albums, hasUser)}`;
+    }
 }
 
 const catalogTemp = (albums, hasUser) => html`

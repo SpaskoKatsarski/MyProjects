@@ -1,11 +1,27 @@
 import { deleteAlbum, getAlbumById } from "../api/data.js";
-import { html, nothing } from "../lib.js";
+import { html, nothing, until } from "../lib.js";
 
-export async function showDetails(ctx) {
-    const album = await getAlbumById(ctx.params.id);
-    const isOwner = ctx.user._id === album._ownerId;
+export function showDetails(ctx) {
+    ctx.render(until(loadDetails(), html`
+    <div class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>`));
 
-    ctx.render(detailsTemp(album, isOwner, onDelete));
+    async function loadDetails() {
+        const album = await getAlbumById(ctx.params.id);
+        const isOwner = ctx.user._id === album._ownerId;
+
+        return html`${detailsTemp(album, isOwner, onDelete)}`;
+    }
 
     async function onDelete() {
         const option = confirm('Are you sure that you want to delete this item?');
