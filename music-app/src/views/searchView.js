@@ -1,7 +1,7 @@
 import { html, nothing } from "../lib.js";
 import { getAlbumsByQuery } from "../api/data.js";
 
-const searchTemp = (isClicked, handler, albums, hasUser) => html`
+const searchTemp = (handler, albums, hasUser) => html`
     <section id="searchPage">
         <h1>Search by Name</h1>
     
@@ -12,11 +12,11 @@ const searchTemp = (isClicked, handler, albums, hasUser) => html`
     
         <h2>Results:</h2>
         <div class="search-result">
-    ${isClicked ? 
+    ${albums ? 
         albums.length > 0 ? html`
                 ${albums.map(a => createAlbumCard(a, hasUser))}
             ` : 
-        html`<p class="no-result">No result.</p>`
+        html`<p class="no-result">No results.</p>`
     : nothing}
     </div>
     </section>`;
@@ -42,9 +42,9 @@ const createAlbumCard = (album, hasUser) => html`
 `
 
 export function showSearch(ctx) {
-    ctx.render(searchTemp(false, onSearch));
+    ctx.render(searchTemp(onSearch));
 
-    async function onSearch(e) {
+    async function onSearch() {
         const query = document.getElementById('search-input').value;
 
         if (!query) {
@@ -52,6 +52,6 @@ export function showSearch(ctx) {
         }
 
         const albums = await getAlbumsByQuery(query);
-        ctx.render(searchTemp(true, onSearch, albums, !!ctx.user));
+        ctx.render(searchTemp(onSearch, albums, !!ctx.user));
     }
 }

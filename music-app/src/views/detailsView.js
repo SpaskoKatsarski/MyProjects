@@ -21,14 +21,14 @@ export function showDetails(ctx) {
         const isOwner = ctx.user._id === album._ownerId;
 
         return html`${detailsTemp(album, isOwner, onDelete)}`;
-    }
 
-    async function onDelete() {
-        const option = confirm('Are you sure that you want to delete this item?');
-
-        if (option) {
-            await deleteAlbum(album._id);
-            ctx.page.redirect('/catalog')
+        async function onDelete() {
+            const option = confirm('Are you sure that you want to delete this item?');
+            debugger;
+            if (option) {
+                await deleteAlbum(album._id);
+                ctx.page.redirect('/catalog')
+            }
         }
     }
 }
