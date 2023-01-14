@@ -3,6 +3,7 @@ import { html } from "../lib.js";
 import { createSubmitHandler } from "../util.js";
 
 export function showRegister(ctx) {
+    debugger;
     ctx.render(registerTemp(createSubmitHandler(onRegister)));
 
     async function onRegister(data) {

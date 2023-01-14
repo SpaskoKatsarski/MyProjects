@@ -7,7 +7,7 @@ export async function showDetails(ctx) {
     ctx.render(detailsTemp(shoe, isOwner, onDelete));
 
     async function onDelete() {
-        await deleteShoe(shoe._id);
+        await deleteShoe(shoe._id, ctx.user);
         ctx.page.redirect('/catalog');
     }
 }
@@ -15,7 +15,7 @@ export async function showDetails(ctx) {
 const detailsTemp = (shoe, isOwner, onDelete) => html`
 <section id="details">
     <div id="details-wrapper">
-        <p id="details-title">Shoe Details</p>
+        <p id="details-title">Show Details</p>
         <div id="img-wrapper">
             <img src=${shoe.imageUrl} alt="image" />
         </div>

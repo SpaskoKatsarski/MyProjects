@@ -20,13 +20,13 @@ export async function getShoeById(id) {
     return shoe;
 }
 
-export async function updateShoe(id, data) {
-    const result = await put(endpoints.shoes + '/' + id, data);
+export async function updateShoe(id, data, user) {
+    const result = await put(endpoints.shoes + '/' + id, data, user);
     return result;
 }
 
-export async function deleteShoe(id) {
-    const result = await del(endpoints.shoes + '/' + id);
+export async function deleteShoe(id, user) {
+    const result = await del(endpoints.shoes + '/' + id, user);
     return result;
 }
 

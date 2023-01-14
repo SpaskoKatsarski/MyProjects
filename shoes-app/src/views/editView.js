@@ -15,7 +15,7 @@ export async function showEdit(ctx) {
 
         const id = shoe._id;
 
-        await updateShoe(id, { brand, model, imageUrl, release, designer, value });
+        await updateShoe(id, { brand, model, imageUrl, release, designer, value }, ctx.user);
         ctx.page.redirect(`/details/${id}`);
     }
 }
