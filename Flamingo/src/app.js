@@ -9,6 +9,7 @@ page(decorateContext)
 
 page('index.html', '/')
 page('/', showHome)
+page('/areas', showHome)
 
 page.start();
 
