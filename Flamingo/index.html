@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="../src/app.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink Flamingo</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./src/app.js" type="module"></script>
 </head>
-
 <body>
-    <nav>
-        <h2 id="pink-flamingos"><a href="/">Pink Flamingos</a></h2>
-        <ul>
-          <li><a href="/info">Info</a></li>
-          <li><a href="/areas">Areas</a></li>
-          <li><a href="/lake">Lake</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
+  <nav class="navbar background">
+      <ul class="nav-list">
+          <div class="logo">
+              <a href="/"><img id="flamingo-home-logo" src="./imgs/flamingoHomeLogo.png"></a>
+          </div>
+          <li><a href="/info">Фламингото</a></li>
+          <li><a href="/areas">Територии</a></li>
+          <li><a href="/lake">Езеро</a></li>
+      </ul>
 
-    <main id="main-content"></main>
+      <div class="rightNav">
+          <input type="text" name="search" id="search">
+          <button class="btn btn-sm">Търсене</button>
+      </div>
+  </nav>
+
+  <main id="main-content"></main>
+    
+  <footer class="background">
+      <p class="text-footer">
+          Copyright ©-Запазени права
+      </p>
+  </footer>
 </body>
-
 </html>
