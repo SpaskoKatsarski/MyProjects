@@ -27,5 +27,7 @@ function decorateContext(ctx, next) {
 
 function onSearch() {
     //To be impelented
+    debugger;
     console.log('Searching...')
+    document.getElementById('search').value = null;
 }
