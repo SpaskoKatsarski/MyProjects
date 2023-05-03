@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+/* FLAMINGO INFORMATION PAGE */
+
+
+
+/* FLAMINGO INFORMATION PAGE END */
+
 /* PINK FLAMINGO BUTTON */
 .custom-btn {
   top: 50px;
@@ -108,19 +114,23 @@
 
 /* PINK FLAMINGO BUTTON - END */
 
+.description-text {
+  font-size: 20px;
+}
+
 #flamingo-home-logo {
   width: 100px;
 }
 
-#pink-flamingo-text {
+.pink-flamingo-text {
   color: rgb(236, 135, 152);
 }
 
-#areas-text {
+.areas-text {
   color: rgb(0, 0, 0);
 }
 
-#lake-text {
+.lake-text {
   color: #000000;
 }
 

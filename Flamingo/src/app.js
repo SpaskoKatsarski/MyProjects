@@ -26,8 +26,18 @@ function decorateContext(ctx, next) {
 }
 
 function onSearch() {
-    //To be impelented
-    debugger;
-    console.log('Searching...')
-    document.getElementById('search').value = null;
+    // Simulating a search functionality
+    const inputText = document.getElementById('search').value
+    document.getElementById('search').value = null
+    
+    if (inputText.toLowerCase() === 'фламинго' 
+        || inputText.toLowerCase() === 'flamingo') {
+        page('/info')
+    } else if (inputText.toLowerCase() === 'територии' 
+                || inputText.toLowerCase() === 'areas') {
+        page('/areas')
+    } else if (inputText.toLowerCase().includes('езеро')
+                || inputText.toLowerCase().includes('lake')) {
+        page('/lake')
+    }
 }

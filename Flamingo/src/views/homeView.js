@@ -14,7 +14,7 @@ const homeTemp = (viewFunctions) => html`
     <section class="firstsection">
       <div class="box-main">
           <div class="firstHalf">
-              <h1 class="text-big" id="pink-flamingo-text">
+              <h1 class="text-big pink-flamingo-text">
                   Розовото Фламинго
               </h1>
                
@@ -31,7 +31,7 @@ const homeTemp = (viewFunctions) => html`
   <section class="secondsection">
       <div class="box-main">
           <div class="secondHalf">
-              <h1 class="text-big" id="areas-text">
+              <h1 class="text-big areas-text">
                   Територии
               </h1>
               <p class="text-small">
@@ -46,7 +46,7 @@ const homeTemp = (viewFunctions) => html`
 
   <section class="section">
       <div class="paras">
-          <h1 class="sectionTag text-big" id="lake-text">Атанасовско Езеро</h1>
+          <h1 class="sectionTag text-big lake-text">Атанасовско Езеро</h1>
 
           <p class="sectionSubTag text-small">
             Над 1600 розови фламингота откриха дом в Атанасовското езеро, съобщено от Българското дружество за защита на птиците. Това е максималната численост, която е преброявана по нашите географски ширини в последните 15 години.

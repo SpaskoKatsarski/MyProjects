@@ -1,7 +1,6 @@
 import { html } from '../lib.js'
 
 export function showArea(ctx) {
-    debugger;
     ctx.render(areaViewTemp())
 }
 
