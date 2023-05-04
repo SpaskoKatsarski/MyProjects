@@ -5,7 +5,63 @@
 
 /* FLAMINGO INFORMATION PAGE */
 
+.wrapper {
+  /* padding: 15px; */
 
+  position: relative;
+  height: 300px;
+  width: 600px;
+  margin: auto;
+  
+  display: flex;
+  flex-direction: row;
+  
+  transition: all 200ms ease-in-out;
+}
+
+.image-wrapper {
+  height: 400;
+  width: 450px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: all 200ms ease-in-out;
+}
+
+.info-flamingo-img {
+  height: 300px;
+  width: 450px;
+  object-fit: cover;
+  object-position: top;
+  
+  transition: all 200ms ease-in-out;
+}
+
+.book-design-image {
+  object-position: center;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  left: 380px;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  
+}
+
+.wrapper:hover img {
+  transform: scale(2);
+  /*object-position: bottom;*/
+}
+
+.wrapper:hover .image-wrapper {
+  width: 800px;
+}
 
 /* FLAMINGO INFORMATION PAGE END */
 
@@ -113,6 +169,17 @@
 }
 
 /* PINK FLAMINGO BUTTON - END */
+
+.active {
+  color: rgb(230, 84, 108);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;   /* Height of the footer */
+}
 
 .description-text {
   font-size: 20px;
@@ -296,3 +363,4 @@
   justify-content: center;
   color: white;
 }
+
