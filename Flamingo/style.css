@@ -273,6 +273,11 @@ footer {
   height: 400px;
 }
 
+.thirdsection {
+  background-color: rgb(105, 186, 211);
+  height: 400px;
+}
+
 .box-main {
   display: flex;
   justify-content: center;
