@@ -7,13 +7,6 @@ import { showLakeView } from './views/lakeView.js'
 
 document.querySelector('button').addEventListener('click', onSearch)
 
-const flamingoEl = document.getElementById('flamingo')
-const areasEl = document.getElementById('areas')
-const lakeEl = document.getElementById('lake')
-
-//TODO: add a class which changes the color of the selected menu
-flamingoEl.addEventListener('click', changeColorFlamingo)
-
 const mainElement = document.getElementById('main-content')
 
 page(decorateContext)
@@ -30,15 +23,6 @@ page.start();
 function decorateContext(ctx, next) {
     ctx.render = (content) => render(content, mainElement)
     next()
-}
-
-function changeColorFlamingo() {
-    debugger;
-    //make it with class not with the property 'style'
-    document.getElementById('flamingoLi').style.color = 'red'
-
-    // areasEl.classList.remove('active')
-    // lakeEl.classList.remove('active')
 }
 
 function onSearch() {
