@@ -27,7 +27,6 @@ function handleSymbol(symbol) {
         buffer = runningTotal;
         runningTotal = 0;
     } else if (symbol === '←') {
-        debugger;
         if (buffer.length === 1) {
             buffer = '0';
         } else {
